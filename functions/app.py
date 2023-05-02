@@ -55,7 +55,7 @@ def extract_data(body, body_json):
         user_id = slack_event['user']
         channel_id = slack_event['channel']
         text = slack_event['text'].replace(f'<@{user_id}>', '')
-        thread_ts = slack_event['thread_ts']
+        thread_ts = slack_event.get('thread_ts')
     else:
         # The data has been sent via a slash command.
         qs = parse_qs(body)
@@ -68,6 +68,8 @@ def extract_data(body, body_json):
     print('channel_id: ', channel_id)
     print('text: ', text)
     print('thread_ts: ', thread_ts)
+
+    return user_id, channel_id, text, thread_ts
 
 
 def get_msg_time(match):
