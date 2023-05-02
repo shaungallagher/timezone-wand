@@ -38,9 +38,9 @@ Open the `slack-manifest.yaml` file and add that URL to the three places where `
 
 Install the app to your workspace.
 
-
-
-
+Finally, grab the authentication token from the OAuth section of the app configuration page and supply it
+as an environment variable (will require a re-deploy).  You can either enter it into the `template.yaml`
+file or supply it when you `sam deploy`.
 
 
 ## Deployment
