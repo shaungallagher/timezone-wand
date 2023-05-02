@@ -1,0 +1,41 @@
+display_information:
+  name: Timezone Wand
+  description: Convert times based on users' timezones
+  background_color: "#9e244b"
+features:
+  bot_user:
+    display_name: Timezone Wand
+    always_online: true
+  shortcuts:
+    - name: Add timezone conversions
+      type: global
+      callback_id: timezone_wand
+      description: Annotates your message with timezone conversions
+  slash_commands:
+    - command: /tz
+      url: [insert URL of your API Gateway endpoint here]
+      description: "Timezone Wand: Add timezone conversions to any message.  Abracadabra!"
+      usage_hint: "[a message containing one or more times, e.g. 2:30 p.m.]"
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - channels:read
+      - commands
+      - groups:read
+      - im:read
+      - users.profile:read
+      - users:read
+      - app_mentions:read
+      - chat:write
+settings:
+  event_subscriptions:
+    request_url: [insert URL of your API Gateway endpoint here]
+    bot_events:
+      - app_mention
+  interactivity:
+    is_enabled: true
+    request_url: [insert URL of your API Gateway endpoint here]
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
