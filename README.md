@@ -1,4 +1,4 @@
-# Timezone Wand
+# 🪄 Timezone Wand 🪄
 
 Timezone Wand is a serverless Slack app for timezone conversions.
 
