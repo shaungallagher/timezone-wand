@@ -4,7 +4,9 @@ Timezone Wand is a serverless Slack app for timezone conversions.
 
 It is intended for organizations that need to self-host their Slack apps (e.g. to comply with security policies).
 
-It is built on the AWS Serverless Application Model (SAM) and contains everything you need to deploy the required serverless resources.  The only thing you'll need to supply is your Slack app's API token.
+If your organization does not need to self host, consider a solution like [Timezone Butler](https://slack.com/apps/AE9AXUV4G-timezone-butler), which is easier to set up.
+
+Timezone Wand is built on the AWS Serverless Application Model (SAM) and contains everything you need to deploy the required serverless resources.  The only thing you'll need to supply is your Slack app's API token.
 
 
 ## Using the app
