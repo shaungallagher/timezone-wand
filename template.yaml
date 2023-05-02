@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SAM Template for Timezone Wand
+
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  SlackAppToken:
+    Description: The token this app uses to authenticate with the Slack API.
+    Type: String
+    Default: xoxb-XXXXXXXX-XXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXX
+
+Resources:
+  TimezoneWandFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Environment:
+        Variables:
+          SlackAppToken: !Ref SlackAppToken
+      Architectures:
+        - x86_64
+      Events:
+        TimezoneWandEvent:
+          Type: Api
+          Properties:
+            Path: /tz
+            Method: post
+
+Outputs:
+  TimezoneWandApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/tz/"
+  TimezoneWandFunction:
+    Description: "TimezoneWand Lambda Function ARN"
+    Value: !GetAtt TimezoneWandFunction.Arn
+  TimezoneWandFunctionIamRole:
+    Description: "Implicit IAM Role created for TimezoneWand function"
+    Value: !GetAtt TimezoneWandFunctionRole.Arn
