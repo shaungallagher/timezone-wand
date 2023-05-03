@@ -15,7 +15,7 @@ You can use Timezone Wand as either a slash command or a bot.
 
 As a Slash command, enter `/tz` followed by a message that contains a time.  Timezone Wand will then post timezone conversions.  Note: Slash commands cannot be used within threads.
 
-As a bot, mention `@Timezone Wand` followed by a message that contains a time.  Timezone Wand will then post timezone conversions.  Note: This will work in threads.
+As a bot, mention `@Timezone Wand` followed by a message that contains a time.  Timezone Wand will then post timezone conversions.  Note: Unlike Slash commands, mentioning the bot will work in threads.
 
 
 <img width="576" alt="timezone-wand-screenshot" src="https://user-images.githubusercontent.com/917943/235697083-87914ac5-5447-4ed2-bae6-4785ef77c593.png">
